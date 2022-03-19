@@ -1,13 +1,123 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Alonzo Page</title>
+	<title>Alonzo Azure</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-	<h1>Psalm XXIII V. Alonzo</h1>
-	<h2>BSIT-3</h2>
 
+<div class="background">
+
+ <div class="nav">
+	<a class="a active" href="#">HOME</a>
+	<a class="b" href="#">ABOUT</a>
+	<a class="c" href="#">GALLERY</a>
+	<a class="d" href="#">CONTACT</a>
+</div>
+
+<div class="content">
+
+	<div class="home">
+		<h1>I am Psalm Alonzo</h1>
+		<h3>Student Web Designer</h3>
+		
+	</div>
+
+	<div class="aboutus">
+		<p class="naol"><b>Hello Friends,</b><br>
+		Welcome to my <b>Personal Website.</b> <br>
+		Ma'am Leah ask us to make our very own website using html.
+			and this is a combination of css and html and a bit of javascript. This website also has a lot features to
+			be put into but it's worth the try. But I only put some minor details about myself. I also learn a lot of things by making
+			this website and to know how really complex web designing is.<br>
+		</p>
+
+	</div>
+
+	<div class="gallery">
+		<div class="image">
+			<img src="{% static 'images/1.jpg' %}" />
+		</div>
+		<div class="image">
+			<img src="{% static 'images/2.jpg' %}" />
+		</div>
+		<div class="image">
+			<img src="{% static 'images/3.jpg' %}" />
+		</div>
+		<div class="image">
+			<img src="{% static 'images/5.jpg' %}" />
+		</div>
+		<div class="image">
+			<img src="{% static 'images/6.jpg' %}" />
+		</div>
+		<div class="image">
+			<img src="{% static 'images/7.jpg' %}" />
+		</div>
+		<div class="image">
+			<img src="{% static 'images/9.jpg' %}" />
+		</div>
+	</div>
+
+	<div class="contactus">
+		<div class="contactform">
+			<form action="index.html" method="post">
+				<input type="text" name="" class="inputtext" value="First Name">
+				<input type="text" name="" class="inputtext" value="Last Name">
+				<input type="text" name="" class="inputtext" value="Your Email">
+				<textarea cols="4" rows="6" class="inputmessage">Your Messages...!!!</textarea>
+				<input type="button" name="" class="submitbutton" value="Submit">
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript" src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('a').click(function(){
+		//alert("i am click");
+		var selected = $(this);
+		$('a').removeClass('active');
+		$(selected).addClass('active');
+	});
+	var $a = $('.a'),
+	$b = $('.b'),
+	$c = $('.c'),
+	$d = $('.d'),
+	$home = $('.home'),
+	$aboutus = $('.aboutus'),
+	$gallery = $('.gallery'),
+	$contactus = $('.contactus');
+
+	$a.click(function(){
+		$home.fadeIn();
+		$aboutus.fadeOut();
+		$gallery.fadeOut();
+		$contactus.fadeOut();
+	});
+	$b.click(function(){
+		$aboutus.fadeIn();
+		$home.fadeOut();
+		$gallery.fadeOut();
+		$contactus.fadeOut();
+	});
+	$c.click(function(){
+		$gallery.fadeIn();
+		$home.fadeOut();
+		$aboutus.fadeOut();
+		$contactus.fadeOut();
+	});
+	$d.click(function(){
+		$contactus.fadeIn();
+		$home.fadeOut();
+		$gallery.fadeOut();
+		$aboutus.fadeOut();
+	});
+});
+</script>
 </body>
 </html>
